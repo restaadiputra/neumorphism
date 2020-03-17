@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Montserrat', sans-serif;
+    }
+    .container {
+      min-height: 100vh;
+    }
+    .container h1 {
+      text-align: center;
+      margin-top: 20px;
+    }
+    .list-container {
+      width: 25%;
+      margin: 0 auto;
+      margin-top: 30px;
+    }
+    .list-container ol {
+      text-align: center;
+    }
+    .list-container ol li {
+      list-style: none;
+    }
+    a {
+      color: inherit;
+      text-transform: uppercase;
+      text-decoration: none;
+      letter-spacing: 0.15em;
+      
+      display: inline-block;
+      padding: 15px 20px;
+      position: relative;
+    }
+    a:hover {
+      font-weight: 800;
+      text-decoration: none;
+      color: inherit;
+    }
+    a:after {    
+      background: none repeat scroll 0 0 transparent;
+      bottom: 0;
+      content: "";
+      display: block;
+      height: 2px;
+      left: 50%;
+      position: absolute;
+      background: #000;
+      transition: width 0.3s ease 0s, left 0.3s ease 0s;
+      width: 0;
+    }
+    a:hover:after { 
+      width: 100%; 
+      left: 0; 
+    }
+  </style>
+  <title>Neumorphism</title>
+</head>
+<body>
+  <div class="container">
+    <h1>Neumorphism Example</h1>
+    <div class="list-container">
+      <ol>
+        <li>
+          <a href="/card-ui-hover.html">Card UI Hover</a>
+        </li>
+      </ol>
+    </div>
+  </div>
+</body>
+</html>
