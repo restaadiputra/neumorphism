@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="seven-segment-watch.css">
+  <title>Document</title>
+</head>
+<body>
+  <div class="digital-watch">
+    <svg width="0" height="0" viewBox="0 0 0 0">
+      <defs>
+        <g id="unit-h">
+          <path d="M0 20 L20 40 L180 40 L200 20 L180 0 L20 0 Z"></path>
+        </g>
+        <g id="unit-v">
+          <path d="M20 0 L0 20 L0 180 L20 200 L40 180 L40 20 Z"></path>
+        </g>
+        <filter id="glow">
+          <fegaussianblur class="blur" result="coloredBlur" stddeviation="4"></fegaussianblur>
+          <femerge>
+            <femergenode in="coloredBlur"></femergenode>
+            <femergenode in="coloredBlur"></femergenode>
+            <femergenode in="coloredBlur"></femergenode>
+            <femergenode in="SourceGraphic"></femergenode>
+          </femerge>
+        </filter>
+      </defs>
+    </svg>
+    <div class="hour">
+      <svg id="hour-1" class="num-0" width="130" height="240" viewBox="0 0 260 480">
+        <use xlink:href="#unit-h" filter="url(#glow)" class="segment a" x="30" y="0"></use>
+        <use xlink:href="#unit-v" filter="url(#glow)" class="segment b" x="220" y="30"></use>
+        <use xlink:href="#unit-v" filter="url(#glow)" class="segment c" x="220" y="250"></use>
+        <use xlink:href="#unit-h" filter="url(#glow)" class="segment d" x="30" y="440"></use>
+        <use xlink:href="#unit-v" filter="url(#glow)" class="segment e" x="0" y="250"></use>
+        <use xlink:href="#unit-v" filter="url(#glow)" class="segment f" x="0" y="30"></use>
+        <use xlink:href="#unit-h" filter="url(#glow)" class="segment g" x="30" y="220"></use>
+      </svg>
+      <svg id="hour-2" class="num-0" width="130" height="240" viewBox="0 0 260 480">
+        <use xlink:href="#unit-h" filter="url(#glow)" class="segment a" x="30" y="0"></use>
+        <use xlink:href="#unit-v" filter="url(#glow)" class="segment b" x="220" y="30"></use>
+        <use xlink:href="#unit-v" filter="url(#glow)" class="segment c" x="220" y="250"></use>
+        <use xlink:href="#unit-h" filter="url(#glow)" class="segment d" x="30" y="440"></use>
+        <use xlink:href="#unit-v" filter="url(#glow)" class="segment e" x="0" y="250"></use>
+        <use xlink:href="#unit-v" filter="url(#glow)" class="segment f" x="0" y="30"></use>
+        <use xlink:href="#unit-h" filter="url(#glow)" class="segment g" x="30" y="220"></use>
+      </svg>
+    </div>
+    <div class="minute">
+      <svg id="minute-1" class="num-0" width="130" height="240" viewBox="0 0 260 480">
+        <use xlink:href="#unit-h" filter="url(#glow)" class="segment a" x="30" y="0"></use>
+        <use xlink:href="#unit-v" filter="url(#glow)" class="segment b" x="220" y="30"></use>
+        <use xlink:href="#unit-v" filter="url(#glow)" class="segment c" x="220" y="250"></use>
+        <use xlink:href="#unit-h" filter="url(#glow)" class="segment d" x="30" y="440"></use>
+        <use xlink:href="#unit-v" filter="url(#glow)" class="segment e" x="0" y="250"></use>
+        <use xlink:href="#unit-v" filter="url(#glow)" class="segment f" x="0" y="30"></use>
+        <use xlink:href="#unit-h" filter="url(#glow)" class="segment g" x="30" y="220"></use>
+      </svg>
+      <svg id="minute-2" class="num-0" width="130" height="240" viewBox="0 0 260 480">
+        <use xlink:href="#unit-h" filter="url(#glow)" class="segment a" x="30" y="0"></use>
+        <use xlink:href="#unit-v" filter="url(#glow)" class="segment b" x="220" y="30"></use>
+        <use xlink:href="#unit-v" filter="url(#glow)" class="segment c" x="220" y="250"></use>
+        <use xlink:href="#unit-h" filter="url(#glow)" class="segment d" x="30" y="440"></use>
+        <use xlink:href="#unit-v" filter="url(#glow)" class="segment e" x="0" y="250"></use>
+        <use xlink:href="#unit-v" filter="url(#glow)" class="segment f" x="0" y="30"></use>
+        <use xlink:href="#unit-h" filter="url(#glow)" class="segment g" x="30" y="220"></use>
+      </svg>
+    </div>
+    <div class="second">
+      <svg id="second-1" class="num-0" width="130" height="240" viewBox="0 0 260 480">
+        <use xlink:href="#unit-h" filter="url(#glow)" class="segment a" x="30" y="0"></use>
+        <use xlink:href="#unit-v" filter="url(#glow)" class="segment b" x="220" y="30"></use>
+        <use xlink:href="#unit-v" filter="url(#glow)" class="segment c" x="220" y="250"></use>
+        <use xlink:href="#unit-h" filter="url(#glow)" class="segment d" x="30" y="440"></use>
+        <use xlink:href="#unit-v" filter="url(#glow)" class="segment e" x="0" y="250"></use>
+        <use xlink:href="#unit-v" filter="url(#glow)" class="segment f" x="0" y="30"></use>
+        <use xlink:href="#unit-h" filter="url(#glow)" class="segment g" x="30" y="220"></use>
+      </svg>
+      <svg id="second-2" class="num-0" width="130" height="240" viewBox="0 0 260 480">
+        <use xlink:href="#unit-h" filter="url(#glow)" class="segment a" x="30" y="0"></use>
+        <use xlink:href="#unit-v" filter="url(#glow)" class="segment b" x="220" y="30"></use>
+        <use xlink:href="#unit-v" filter="url(#glow)" class="segment c" x="220" y="250"></use>
+        <use xlink:href="#unit-h" filter="url(#glow)" class="segment d" x="30" y="440"></use>
+        <use xlink:href="#unit-v" filter="url(#glow)" class="segment e" x="0" y="250"></use>
+        <use xlink:href="#unit-v" filter="url(#glow)" class="segment f" x="0" y="30"></use>
+        <use xlink:href="#unit-h" filter="url(#glow)" class="segment g" x="30" y="220"></use>
+      </svg>
+    </div>
+  </div>
+  <script>
+    function changeTime() {
+      var time   = new Date();
+      var hour   = ('0' + time.getHours()).slice(-2);
+      var minute = ('0' + time.getMinutes()).slice(-2);
+      var second = ('0' + time.getSeconds()).slice(-2);
+
+      document.getElementById('hour-1').setAttribute('class', 'num-'+hour.substr(0,1));
+      document.getElementById('hour-2').setAttribute('class', 'num-'+hour.substr(1,1));
+      document.getElementById('minute-1').setAttribute('class', 'num-'+minute.substr(0,1));
+      document.getElementById('minute-2').setAttribute('class', 'num-'+minute.substr(1,1));
+      document.getElementById('second-1').setAttribute('class', 'num-'+second.substr(0,1));
+      document.getElementById('second-2').setAttribute('class', 'num-'+second.substr(1,1));
+      
+      setTimeout(changeTime, 1000);
+    }
+
+    changeTime();
+  </script>
+</body>
+</html>
