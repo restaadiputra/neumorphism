@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Digital Clock</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="clock-box">
+        <span id="clock-content"></span>
+        <span id="clock-state"></span>
+        <div class="color">
+          <div data-button="red" class="color-item red-text">red</div>
+          <div data-button="green" class="color-item green-text">green</div>
+          <div data-button="blue" class="color-item blue-text active-blue active">
+            blue
+          </div>
+        </div>
+      </div>
+      <div id="day" class="day-box">
+        <span class="day-item">sun</span>
+        <span class="day-item">mon</span>
+        <span class="day-item">tue</span>
+        <span class="day-item">wed</span>
+        <span class="day-item">thu</span>
+        <span class="day-item">fri</span>
+        <span class="day-item">sat</span>
+      </div>
+    </div>
+    <script>
+      var currentColor = 'red'; // set first color here
+      const buttons = document.querySelectorAll('.color-item');
+
+      buttons.forEach(button => {
+        button.addEventListener('click', () => {
+          buttonActive(button);
+        });
+      });
+
+      const buttonActive = button => {
+        let active = button.classList.contains(`active-${currentColor}`);
+        if (!active) {
+          let prevColor = currentColor;
+          currentColor = button.dataset.button;
+          changeColor(prevColor, currentColor);
+        }
+      };
+
+      const changeColor = (prevColor, curColor) => {
+        // change all color 'day' div
+        var dayBox = document.querySelectorAll('.day-item');
+        dayBox.forEach(e => {
+          if (!!prevColor) {
+            e.classList.toggle(`${prevColor}-text`);
+          }
+          if (!!curColor) {
+            e.classList.toggle(`${curColor}-text`);
+            if (e.classList.contains(`active-${prevColor}`)) {
+              e.classList.remove(`active-${prevColor}`);
+              e.classList.add(`active-${curColor}`);
+            }
+          }
+        });
+
+        // change all color 'button' div
+        var buttonBox = document.querySelectorAll('.color-item');
+        buttonBox.forEach(e => {
+          if (e.dataset.button === curColor) {
+            e.classList.add(`active-${e.dataset.button}`);
+            e.classList.add('active');
+            e.classList.remove(`${e.dataset.button}-text`);
+          } else {
+            e.classList.remove('active');
+            e.classList.remove(`active-${e.dataset.button}`);
+            e.classList.add(`${e.dataset.button}-text`);
+          }
+        });
+
+        // change clock color
+        var clock = document.getElementById('clock-content')
+        clock.classList.remove(`${prevColor}-text-clock`);
+        clock.classList.add(`${curColor}-text-clock`);
+
+        var clockState = document.getElementById('clock-state')
+        clockState.classList.remove(`${prevColor}-text-clock`);
+        clockState.classList.add(`${curColor}-text-clock`);
+
+      };
+
+      const setTime = () => {
+        var time = new Date();
+        var rawHour = time.getHours();
+        var state = rawHour >= 12 ? 'PM' : 'AM';
+
+        var hour = ('0' + (rawHour % 12)).slice(-2);
+        var minute = ('0' + time.getMinutes()).slice(-2);
+        var second = ('0' + time.getSeconds()).slice(-2);
+
+        var dayBox = document.querySelectorAll('.day-item');
+        var day = time.getDay();
+        if (!dayBox[day].classList.contains(`active-${currentColor}`)) {
+          dayBox.forEach((e, index) => {
+            if (index === day) {
+              e.classList.add(`active-${currentColor}`);
+            } else {
+              e.classList.remove(`active-${currentColor}`);
+            }
+          });
+        }
+
+        var result = hour + ':' + minute + ':' + second;
+        document.getElementById('clock-content').innerText = result;
+        document.getElementById('clock-content').textContent = result;
+        document.getElementById('clock-state').innerText = state;
+        document.getElementById('clock-state').textContent = state;
+
+        setTimeout(setTime, 1000);
+      };
+
+      // Execution
+      changeColor('', currentColor);
+      setTime();
+    </script>
+  </body>
+</html>
