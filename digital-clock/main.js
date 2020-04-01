@@ -1,4 +1,7 @@
-let currentColor = 'red'; // set first color here
+const colors = ['red', 'green', 'blue'];
+
+// set random colors
+let currentColor = colors[Math.floor(Math.random() * colors.length)];
 
 // Assign each button with eventListener
 const assignEventListener = () => {
@@ -56,9 +59,6 @@ const changeColor = (prevColor, curColor) => {
     e.classList.remove(`text-clock--${prevColor}`);
     e.classList.add(`text-clock--${curColor}`);
   })
-  // let clock = document.getElementById('clock-box__content');
-  // clock.classList.remove(`text-clock--${prevColor}`);
-  // clock.classList.add(`text-clock--${curColor}`);
 
   // Change clock state color
   let clockState = document.getElementById('clock-box__state');
@@ -72,7 +72,7 @@ const setTime = () => {
   let rawHour = time.getHours();
   let state = rawHour >= 12 ? 'PM' : 'AM';
 
-  let hour = ('0' + (rawHour === 12 ? 12 : (rawHour % 12))).slice(-2);
+  let hour   = ('0' + (rawHour === 12 ? 12 : (rawHour % 12))).slice(-2);
   let minute = ('0' + time.getMinutes()).slice(-2);
   let second = ('0' + time.getSeconds()).slice(-2);
 
@@ -88,15 +88,13 @@ const setTime = () => {
     });
   }
 
-  let result = hour + ':' + minute + ':' + second;
   let contentItem = document.querySelectorAll('.content__item');
   contentItem[0].innerText = hour;
   contentItem[1].innerText = ':';
   contentItem[2].innerText = minute;
   contentItem[3].innerText = ':';
   contentItem[4].innerText = second;
-  // document.getElementById('clock-box__content').innerText = result;
-  // document.getElementById('clock-box__content').textContent = result;
+
   document.getElementById('clock-box__state').innerText = state;
   document.getElementById('clock-box__state').textContent = state;
 
