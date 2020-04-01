@@ -23,8 +23,8 @@ body {
   justify-content: center;
   border-radius: 19px;
   background: #131419;
-  box-shadow: -5px 5px 9px #0d0e11, 
-              5px -5px 9px #191a21;
+  box-shadow: -5px 5px 15px #0d0e11, 
+              5px -5px 15px #191a21;
 }
 .clock-box span {
   text-align: center;
@@ -37,7 +37,7 @@ body {
 .clock-box span:nth-child(2) {
   width: 30%;
 }
-.clock-box .color {
+.clock-box .clock-box__color {
   height: 150px;
   position: absolute;
   right: -100px;
@@ -45,7 +45,7 @@ body {
   flex-direction: column;
   justify-content: space-between;
 }
-.clock-box .color .color-item {
+.clock-box .clock-box__color .color__item {
   text-align: center;
   cursor: pointer;
   padding: 10px;
@@ -55,7 +55,7 @@ body {
   5px -5px 5px #191a21;
   transition: .5s;
 }
-.clock-box .color .active {
+.clock-box .clock-box__color .color--active {
   border-radius: 5px;
   background: #131419;
   box-shadow: inset -5px 5px 14px #0d0e11, 
@@ -76,45 +76,45 @@ body {
               5px -5px 5px #191a21;
   transition: .5s;
 }
-.blue-text {
+.text--blue {
   color: #00f2ff52;
 }
-.clock-box .color .blue-text:hover {
+.clock-box .color .text--blue:hover {
   text-shadow: 0 0 10px #00f2ff52;
 }
-.active-blue {
+.text--blue-active {
   color: #00f3ff;
   text-shadow: 0 0 3px #00f3ff;
 }
-.blue-text-clock {
+.text-clock--blue {
   color: #00f3ff;
   text-shadow: 0 0 10px #00f3ff;
 }
-.red-text {
+.text--red {
   color: #ff000052;
 }
-.clock-box .color .red-text:hover {
+.clock-box .color .text--red:hover {
   text-shadow: 0 0 10px #ff000052;
 }
-.active-red {
+.text--red-active {
   color: #ff0000;
   text-shadow: 0 0 3px #ff0000;
 }
-.red-text-clock {
+.text-clock--red {
   color: #ff0000;
   text-shadow: 0 0 10px #ff0000;
 }
-.green-text {
+.text--green {
   color: #00ff0052;
 }
-.clock-box .color .green-text:hover {
+.clock-box .color .text--green:hover {
   text-shadow: 0 0 10px #00ff0052;
 }
-.active-green {
+.text--green-active {
   color: #00ff00;
   text-shadow: 0 0 3px #00ff00;
 }
-.green-text-clock {
+.text-clock--green {
   color: #00ff00;
   text-shadow: 0 0 10px #00ff00;
 }
