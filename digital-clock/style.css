@@ -45,21 +45,23 @@ body {
   flex-direction: column;
   justify-content: space-between;
 }
-.clock-box .clock-box__color .color__item {
+.clock-box__color .color__item {
   text-align: center;
   cursor: pointer;
   padding: 10px;
   border-radius: 5px;
   background: #131419;
-  box-shadow: -5px 5px 5px #0d0e11, 
-  5px -5px 5px #191a21;
+  box-shadow: -5px 5px 12px #0d0e11, 
+              5px -5px 12px #191a219c;
   transition: .5s;
 }
-.clock-box .clock-box__color .color--active {
+.clock-box__color .color--active {
   border-radius: 5px;
   background: #131419;
   box-shadow: inset -5px 5px 14px #0d0e11, 
-              inset 5px -5px 14px #191a21;
+              inset 5px -5px 14px #191a21,
+              1px 1px 3px #191a21,
+              1px 1px 3px #191a21;
 }
 .day-box {
   margin: 20px;
@@ -72,14 +74,14 @@ body {
   padding: 10px;
   border-radius: 5px;
   background: #131419;
-  box-shadow: -5px 5px 5px #0d0e11, 
-              5px -5px 5px #191a21;
+  box-shadow: -5px 5px 12px #0d0e11, 
+              5px -5px 12px #191a21;
   transition: .5s;
 }
 .text--blue {
   color: #00f2ff52;
 }
-.clock-box .color .text--blue:hover {
+.clock-box__color .text--blue:hover {
   text-shadow: 0 0 10px #00f2ff52;
 }
 .text--blue-active {
@@ -93,7 +95,7 @@ body {
 .text--red {
   color: #ff000052;
 }
-.clock-box .color .text--red:hover {
+.clock-box__color .text--red:hover {
   text-shadow: 0 0 10px #ff000052;
 }
 .text--red-active {
@@ -107,7 +109,7 @@ body {
 .text--green {
   color: #00ff0052;
 }
-.clock-box .color .text--green:hover {
+.clock-box__color .text--green:hover {
   text-shadow: 0 0 10px #00ff0052;
 }
 .text--green-active {
