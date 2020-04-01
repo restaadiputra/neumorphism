@@ -51,9 +51,14 @@ const changeColor = (prevColor, curColor) => {
   });
 
   // Change clock color
-  let clock = document.getElementById('clock-box__content');
-  clock.classList.remove(`text-clock--${prevColor}`);
-  clock.classList.add(`text-clock--${curColor}`);
+  let contentItem = document.querySelectorAll('.content__item');
+  contentItem.forEach(e => {
+    e.classList.remove(`text-clock--${prevColor}`);
+    e.classList.add(`text-clock--${curColor}`);
+  })
+  // let clock = document.getElementById('clock-box__content');
+  // clock.classList.remove(`text-clock--${prevColor}`);
+  // clock.classList.add(`text-clock--${curColor}`);
 
   // Change clock state color
   let clockState = document.getElementById('clock-box__state');
@@ -84,8 +89,14 @@ const setTime = () => {
   }
 
   let result = hour + ':' + minute + ':' + second;
-  document.getElementById('clock-box__content').innerText = result;
-  document.getElementById('clock-box__content').textContent = result;
+  let contentItem = document.querySelectorAll('.content__item');
+  contentItem[0].innerText = hour;
+  contentItem[1].innerText = ':';
+  contentItem[2].innerText = minute;
+  contentItem[3].innerText = ':';
+  contentItem[4].innerText = second;
+  // document.getElementById('clock-box__content').innerText = result;
+  // document.getElementById('clock-box__content').textContent = result;
   document.getElementById('clock-box__state').innerText = state;
   document.getElementById('clock-box__state').textContent = state;
 

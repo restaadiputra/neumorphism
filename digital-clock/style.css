@@ -14,13 +14,14 @@ body {
   flex-direction: column;
 }
 .clock-box {
+  box-sizing: border-box;
   width: 500px;
   height: 150px;
   display: flex;
   position: relative;
-  margin: 0 20px;
+  padding: 0 10px;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   border-radius: 19px;
   background: #131419;
   box-shadow: -5px 5px 15px #0d0e11, 
@@ -31,11 +32,34 @@ body {
   font-size: 60px;
   transition: color .5s;
 }
-.clock-box span:nth-child(1) {
+#clock-box__content {
+  display: flex;
+  align-items: center;
   width: 70%;
 }
-.clock-box span:nth-child(2) {
+#clock-box__content span:nth-child(1),
+#clock-box__content span:nth-child(3),
+#clock-box__content span:nth-child(5) {
   width: 30%;
+}
+#clock-box__content span:nth-child(2),
+#clock-box__content span:nth-child(4) {
+  width: 5%;
+}
+#clock-box__state {
+  position: relative;
+  width: 25%;
+  text-align: center;
+}
+#clock-box__state:before {
+  content: '';
+  left: -10px;
+  position: absolute;
+  width: 2px;
+  height: 100%;
+  background: #131419;
+  box-shadow: -3px 3px 2px #0d0e11, 
+              3px -3px 2px #191a219c;
 }
 .clock-box .clock-box__color {
   height: 150px;
