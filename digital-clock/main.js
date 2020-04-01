@@ -72,7 +72,7 @@ const setTime = () => {
   let rawHour = time.getHours();
   let state = rawHour >= 12 ? 'PM' : 'AM';
 
-  let hour = ('0' + (rawHour % 12)).slice(-2);
+  let hour = ('0' + (rawHour === 12 ? 12 : (rawHour % 12))).slice(-2);
   let minute = ('0' + time.getMinutes()).slice(-2);
   let second = ('0' + time.getSeconds()).slice(-2);
 
